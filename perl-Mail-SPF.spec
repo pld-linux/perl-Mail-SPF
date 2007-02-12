@@ -7,7 +7,7 @@
 %define		pdir	Mail
 %define		pnam	SPF
 Summary:	Mail::SPF - Mail Sender Authentication
-Summary(pl):	Mail::SPF - uwierzytelnianie wysy³aj±cego pocztê
+Summary(pl.UTF-8):   Mail::SPF - uwierzytelnianie wysyÅ‚ajÄ…cego pocztÄ™
 Name:		perl-Mail-SPF
 Version:	2.00
 Release:	0.1
@@ -28,10 +28,10 @@ Mail::SPF::Query. It is not yet fully tested, and does not yet contain
 all of the additional features expected of a practical SPF
 implementation.
 
-%description -l pl
-To jest pocz±tkowa zorientowana obiektowo reimplementacja
-Mail::SPF::Query. Nie jest jeszcze w pe³ni przetestowana i nie zawiera
-jeszcze wszystkich dodatkowych mo¿liwo¶ci oczekiwanych od praktycznej
+%description -l pl.UTF-8
+To jest poczÄ…tkowa zorientowana obiektowo reimplementacja
+Mail::SPF::Query. Nie jest jeszcze w peÅ‚ni przetestowana i nie zawiera
+jeszcze wszystkich dodatkowych moÅ¼liwoÅ›ci oczekiwanych od praktycznej
 implementacji SPF.
 
 %prep
