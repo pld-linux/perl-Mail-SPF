@@ -10,7 +10,7 @@ Summary:	Mail::SPF - Mail Sender Authentication
 Summary(pl.UTF-8):	Mail::SPF - uwierzytelnianie wysyłającego pocztę
 Name:		perl-Mail-SPF
 Version:	2.004
-Release:	0.1
+Release:	1
 # "same as perl"
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
