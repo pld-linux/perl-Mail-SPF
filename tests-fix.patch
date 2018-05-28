@@ -1,0 +1,16 @@
+diff -ur Mail-SPF-v2.9.0.orig/lib/Mail/SPF/Util.pm Mail-SPF-v2.9.0/lib/Mail/SPF/Util.pm
+--- Mail-SPF-v2.9.0.orig/lib/Mail/SPF/Util.pm	2013-07-22 03:52:31.000000000 +0000
++++ Mail-SPF-v2.9.0/lib/Mail/SPF/Util.pm	2018-05-28 18:23:46.047830651 +0000
+@@ -155,9 +155,9 @@
+ throws I<Mail::SPF::EInvalidOptionValue>
+ 
+ Returns the given I<NetAddr::IP> IPv4 or IPv6 address compactly formatted as a
+-I<string>.  For IPv4 addresses, this is equivalent to calling L< NetAddr::IP's
+-C<addr> |NetAddr::IP/addr> method.  For IPv6 addresses, this is equivalent to
+-calling L< NetAddr::IP's C<short> |NedAddr::IP/short> method.  Throws a
++I<string>.  For IPv4 addresses, this is equivalent to calling L<NetAddr::IP>'s
++C<addr> method.  For IPv6 addresses, this is equivalent to
++calling L<NetAddr::IP>'s C<short> method.  Throws a
+ I<Mail::SPF::EInvalidOptionValue> exception if the specified object is not a
+ I<NetAddr::IP> IPv4 or IPv6 address object.
+ 

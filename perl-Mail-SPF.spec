@@ -8,13 +8,14 @@
 Summary:	Mail::SPF - Mail Sender Authentication
 Summary(pl.UTF-8):	Mail::SPF - uwierzytelnianie wysyłającego pocztę
 Name:		perl-Mail-SPF
-Version:	2.004
+Version:	2.9.0
 Release:	1
 # "same as perl"
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	0923798432e0f25dffc4bc6428abef6a
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-v%{version}.tar.gz
+# Source0-md5:	664e20d79c87fa505080f362e827dace
+Patch0:		tests-fix.patch
 URL:		http://search.cpan.org/dist/Mail-SPF/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -40,7 +41,8 @@ jeszcze wszystkich dodatkowych możliwości oczekiwanych od praktycznej
 implementacji SPF.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-%{version}
+%setup -q -n %{pdir}-%{pnam}-v%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
