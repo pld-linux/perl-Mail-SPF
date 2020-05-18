@@ -16,6 +16,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-v%{versio
 # Source0-md5:	664e20d79c87fa505080f362e827dace
 Patch0:		tests-fix.patch
 URL:		http://search.cpan.org/dist/Mail-SPF/
+BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
