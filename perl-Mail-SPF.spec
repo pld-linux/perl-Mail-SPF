@@ -8,7 +8,7 @@ Summary:	Mail::SPF - Mail Sender Authentication
 Summary(pl.UTF-8):	Mail::SPF - uwierzytelnianie wysyłającego pocztę
 Name:		perl-Mail-SPF
 Version:	2.9.0
-Release:	3
+Release:	4
 # "same as perl"
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
@@ -28,7 +28,7 @@ BuildRequires:	perl-Net-DNS-Resolver-Programmable
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(Mail::SPF::GlobalMod)'
+%define		_noautoreq_perl		Mail::SPF::GlobalMod
 
 %description
 This is an initial draft object oriented reimplementation of
