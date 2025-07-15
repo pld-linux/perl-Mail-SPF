@@ -44,7 +44,7 @@ implementacji SPF.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 # These tests mess around with resolv.conf and networking
 # that are not present on builders
