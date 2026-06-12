@@ -1,16 +1,11 @@
-diff -ur Mail-SPF-3.20240206.orig/lib/Mail/SPF/Util.pm Mail-SPF-3.20240206/lib/Mail/SPF/Util.pm
---- Mail-SPF-3.20240206.orig/lib/Mail/SPF/Util.pm	2024-02-06 03:12:51.000000000 +0100
-+++ Mail-SPF-3.20240206/lib/Mail/SPF/Util.pm	2024-04-28 14:12:16.939141473 +0200
-@@ -155,9 +155,9 @@
- throws I<Mail::SPF::EInvalidOptionValue>
- 
+--- Mail-SPF-3.20260331.orig/lib/Mail/SPF/Util.pm	2026-06-12 17:22:57.675513440 +0200
++++ Mail-SPF-3.20260331/lib/Mail/SPF/Util.pm	2026-06-12 17:22:57.666354282 +0200
+@@ -161,7 +161,7 @@
  Returns the given I<NetAddr::IP> IPv4 or IPv6 address compactly formatted as a
--I<string>.  For IPv4 addresses, this is equivalent to calling L<NetAddr::IP's
--C<addr> |NetAddr::IP/addr> method.  For IPv6 addresses, this is equivalent to
--calling L<NetAddr::IP's C<short> |NedAddr::IP/short> method.  Throws a
-+I<string>.  For IPv4 addresses, this is equivalent to calling L<NetAddr::IP>'s
-+C<addr> method.  For IPv6 addresses, this is equivalent to
-+calling L<NetAddr::IP>'s C<short> method.  Throws a
+ I<string>.  For IPv4 addresses, this is equivalent to calling L<NetAddr::IP's
+ C<addr>|NetAddr::IP/addr> method.  For IPv6 addresses, this is equivalent to
+-calling L<NetAddr::IP's C<short>|NedAddr::IP/short> method.  Throws a
++calling L<NetAddr::IP's C<short>|NetAddr::IP/short> method.  Throws a
  I<Mail::SPF::EInvalidOptionValue> exception if the specified object is not a
  I<NetAddr::IP> IPv4 or IPv6 address object.
  

@@ -7,13 +7,13 @@
 Summary:	Mail::SPF - Mail Sender Authentication
 Summary(pl.UTF-8):	Mail::SPF - uwierzytelnianie wysyłającego pocztę
 Name:		perl-Mail-SPF
-Version:	3.20240206
+Version:	3.20260331
 Release:	1
 # "same as perl"
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	da1b4b35241de31553bc00626db90c12
+# Source0-md5:	71bf0b162bc21c67e3a7e873aee7959a
 Patch0:		tests-fix.patch
 URL:		http://search.cpan.org/dist/Mail-SPF/
 BuildRequires:	perl-Module-Build
