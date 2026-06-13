@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Mail
 %define		pnam	SPF
@@ -12,10 +12,10 @@ Release:	1
 # "same as perl"
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	https://www.cpan.org/modules/by-module/Mail/MBRADSHAW/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	71bf0b162bc21c67e3a7e873aee7959a
 Patch0:		tests-fix.patch
-URL:		http://search.cpan.org/dist/Mail-SPF/
+URL:		https://metacpan.org/dist/Mail-SPF
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -50,7 +50,6 @@ implementacji SPF.
 # that are not present on builders
 %{__rm} t/00.04-class-server.t t/00.05-class-macrostring.t
 
-
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
@@ -68,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 # Move spfd from /usr/bin to /usr/sbin to keep path same
 # as in older versions, note: needs spfd-path.patch!
 install -d $RPM_BUILD_ROOT%{_sbindir}
-%{__mv} $RPM_BUILD_ROOT%{_bindir}/spfd $RPM_BUILD_ROOT%{_sbindir}/
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/spfd $RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
