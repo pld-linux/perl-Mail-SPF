@@ -9,21 +9,23 @@ Summary(pl.UTF-8):	Mail::SPF - uwierzytelnianie wysyłającego pocztę
 Name:		perl-Mail-SPF
 Version:	3.20260331
 Release:	1
-# "same as perl"
-License:	GPL or Artistic
+License:	BSD
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-module/Mail/MBRADSHAW/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	71bf0b162bc21c67e3a7e873aee7959a
 Patch0:		tests-fix.patch
 URL:		https://metacpan.org/dist/Mail-SPF
-BuildRequires:	perl-Module-Build
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl-Error
 BuildRequires:	perl-Net-DNS >= 0.58
-BuildRequires:	perl-NetAddr-IP
-BuildRequires:	perl-version
 BuildRequires:	perl-Net-DNS-Resolver-Programmable
+BuildRequires:	perl-NetAddr-IP
+BuildRequires:	perl-Test-Simple
+BuildRequires:	perl-URI >= 1.13
+BuildRequires:	perl-version
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -74,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc Changes LICENSE README TODO
 %attr(755,root,root) %{_bindir}/spfquery
 %attr(755,root,root) %{_sbindir}/spfd
 %{perl_vendorlib}/Mail/SPF.pm
@@ -84,5 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Mail/SPF/Mod
 %{perl_vendorlib}/Mail/SPF/v1
 %{perl_vendorlib}/Mail/SPF/v2
-%{_mandir}/man1/*
-%{_mandir}/man3/*
+%{_mandir}/man1/spfd.1p*
+%{_mandir}/man1/spfquery.1p*
+%{_mandir}/man3/Mail::SPF*.3pm*
