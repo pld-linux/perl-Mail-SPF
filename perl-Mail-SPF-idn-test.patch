@@ -1,0 +1,20 @@
+--- Mail-SPF-3.20261105/t/00.06-class-server-dns-errors.t.orig
++++ Mail-SPF-3.20261105/t/00.06-class-server-dns-errors.t
+@@ -72,11 +72,17 @@
+     [ ('a' x 40) . '\\.' . ('b' x 40) . '.example.com', 'with overlong label with escaped dot' ]
+ ) {
+     my ($domain, $description) = @$case;
++    # with Net::LibIDN2 available, Net::DNS converts non-ASCII labels to punycode,
++    # so the UTF-8 length cases become valid names and the test fails
++    SKIP: {
++    skip "Net::DNS uses IDN (Net::LibIDN2)", 2
++        if $description =~ /UTF-8/ && eval { Net::DNS::Domain::LIBIDN2() };
+     @queries = ();
+     my $packet = eval { $server->dns_lookup($domain, 'A') };
+     my $label = "Server dns_lookup() of invalid domain $description";
+     is(($packet ? $packet->header->rcode : "error: $@"), 'NXDOMAIN', "$label NXDOMAIN");
+     is(scalar(@queries),        0,                      "$label does not query resolver");
++    }
+ }
+ 
+ 

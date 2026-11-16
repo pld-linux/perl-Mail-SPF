@@ -7,13 +7,14 @@
 Summary:	Mail::SPF - Mail Sender Authentication
 Summary(pl.UTF-8):	Mail::SPF - uwierzytelnianie wysyłającego pocztę
 Name:		perl-Mail-SPF
-Version:	3.20260331
+Version:	3.20261105
 Release:	1
 License:	BSD
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-module/Mail/MBRADSHAW/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	71bf0b162bc21c67e3a7e873aee7959a
+# Source0-md5:	a9e31ece12a6800e773652ee91edca79
 Patch0:		tests-fix.patch
+Patch1:		%{name}-idn-test.patch
 URL:		https://metacpan.org/dist/Mail-SPF
 BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -48,6 +49,7 @@ implementacji SPF.
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 %patch -P0 -p1
+%patch -P1 -p1
 
 # These tests mess around with resolv.conf and networking
 # that are not present on builders
